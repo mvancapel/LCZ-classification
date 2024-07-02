@@ -1,34 +1,11 @@
 import rasterio
-from rasterio.features import rasterize
-from rasterio.transform import from_bounds
-from rasterio.merge import merge
-from rasterio.mask import mask
 from rasterio.windows import Window
-from rasterio.enums import Resampling
-
-import geopandas as gpd
-import os
-import glob
-import math
-import shapely
-from rasterio import features
-from shapely.geometry import Polygon, LineString, Point, shape
-from osgeo import gdal, ogr
-import pandas as pd
 import numpy as np
-from pathlib import Path
-import json
-from shapely.geometry import box
-from fiona.crs import from_epsg
-import pycrs
 
-import matplotlib.pyplot as plt
-from matplotlib.patches import Polygon
-
+counter = 0  # Define a global counter variable
 
 def save_window(x_ind, y_ind, window_size, image_no, mask, satellite, n_bands, directory):
-    output_mask = f'./{directory}/mask/{image_no}.tif'
-    output_satellite = f'./{directory}/satellite/{image_no}.tif'
+    global counter  # Access the global counter variable
     window = Window(x_ind, y_ind, window_size, window_size)
 
     # get window transforms
@@ -42,24 +19,32 @@ def save_window(x_ind, y_ind, window_size, image_no, mask, satellite, n_bands, d
 
     mask_local = -999 if mask_local.size==0 else mask_local
 
-    max = np.max(mask_local)
-    print(max)
-    print(type(mask_local))
-    count_1 = np.count_nonzero(mask_local == 1)
-    count_2 = np.count_nonzero(mask_local == 2)
+    #max = np.max(mask_local)
+    min = np.min(mask_local)
+    #print(max)
+    #print(type(mask_local))
+    # count_1 = np.count_nonzero(mask_local == 1)
+    # count_2 = np.count_nonzero(mask_local == 2)
 
 
     if hasattr(mask_local, "__len__"):
-        with rasterio.open(output_mask, 'w',
-                            driver='GTiff', width=window_size, height=window_size, count=1,
-                            dtype=rasterio.uint8, transform=transform_mask) as dst:
-            dst.write(mask_local)
+        if not (min == -999.0):
+            counter += 1  # Increment the global counter
+            i = counter
+            print("i = ", i)
+            output_mask = f'./{directory}/mask/{i}.tif'
+            output_satellite = f'./{directory}/satellite/{i}.tif'
+            with rasterio.open(output_mask, 'w',
+                                driver='GTiff', width=window_size, height=window_size, count=1,
+                                dtype=rasterio.uint8, transform=transform_mask) as dst:
+                dst.write(mask_local)
 
     # Save clip of satellite
-        with rasterio.open(output_satellite, 'w',
-                            driver='GTiff', width=window_size, height=window_size, count=n_bands,
-                            dtype=rasterio.rasterio.float32, transform=transform_sat) as dst:
-            dst.write(sat_local)
+            with rasterio.open(output_satellite, 'w',
+                                driver='GTiff', width=window_size, height=window_size, count=n_bands,
+                                dtype=rasterio.rasterio.float32, transform=transform_sat) as dst:
+                dst.write(sat_local)
+
 
 
 def create_dataset(satellite, mask, directory, n_bands):
@@ -85,10 +70,10 @@ def create_dataset(satellite, mask, directory, n_bands):
     shape_tile = w_px, h_px
 
     # initialize moving window
-    window_size = 32
+    window_size = 64
     x_ind = 0
     y_ind = 0
-    stride = 32
+    stride = 64
     print('window initialized')
 
     # traverse
@@ -126,26 +111,17 @@ def create_dataset(satellite, mask, directory, n_bands):
 
 if __name__ == "__main__":
 
-    data_path = r'C:\Users\mavc\Downloads\Den haag 2022\Selected images\Images with Rotterdam'
 
-    satellite_file = r'C:\Users\mavc\Documents\Geomatics\thesis\Data QGIS project\Rotterdam and Den Haag\202210411504stack_raster.tif'
-    labels_file = r'C:\Users\mavc\Documents\Geomatics\thesis\Data QGIS project\Cluster ISODATA 20 classes Den Haag en Rotterdam (50 iterations).tif'
+    satellite_file = r'C:\Users\mavc\Documents\Geomatics\thesis\Data QGIS project\Bigger extent 2022 and 2023\QGIS layers\Stack peaks 1.vrt'
+    labels_file = r'C:\Users\mavc\Documents\Geomatics\thesis\Data QGIS project\Bigger extent 2022 and 2023\QGIS layers\ISODATA 12 classes 50 iterations.tif'
 
-    mask_output = 'labels.tif'  # name to use for created mask raster
-    directory = './data'  # created large mask raster
+    directory = './data_peaks'  # created large mask raster
 
-    # to create label raster
-    #mask_rasters(satellite_file, polygons_file, mask_output)
 
     # set parameters
-    n_bands = 25
-    size = 32
+    n_bands = 4
+    size = 64
 
-    # grid = create_grid(satellite_file, mask_output)
-    scale_factor = 8
-
-    # # create training dataset (along grid)
-    # dataset_from_grid(satellite_file, mask_output, directory, n_bands, size, grid)
 
     # # create training dataset (cover entire raster)
     create_dataset(satellite_file, labels_file, directory, n_bands)

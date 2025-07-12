@@ -1,0 +1,112 @@
+<VRTDataset rasterXSize="1670" rasterYSize="1198">
+  <SRS dataAxisToSRSAxisMapping="2,1">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</SRS>
+  <GeoTransform>  3.9606414139564619e+00,  6.3008233734774578e-04,  0.0000000000000000e+00,  5.2555506433420533e+01,  0.0000000000000000e+00, -6.3008233734774578e-04</GeoTransform>
+  <VRTRasterBand dataType="UInt16" band="1">
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MAXIMUM">15652</MDI>
+      <MDI key="STATISTICS_MEAN">15003.586540036</MDI>
+      <MDI key="STATISTICS_MINIMUM">14361</MDI>
+      <MDI key="STATISTICS_STDDEV">169.41431827103</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">38.96</MDI>
+    </Metadata>
+    <NoDataValue>0</NoDataValue>
+    <Scale>0.02</Scale>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/mavc/Documents/Geomatics/thesis/Data QGIS project/Bigger extent 2022 and 2023/Start/ECO2LSTE.001_SDS_LST_doy2021152162050_aid0001.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1668" RasterYSize="1196" DataType="UInt16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1668" ySize="1196" />
+      <DstRect xOff="0.074735600850555" yOff="0.198950480104224" xSize="1669.50579741421" ySize="1197.07969646726" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="2">
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MAXIMUM">15064</MDI>
+      <MDI key="STATISTICS_MEAN">14546.758452536</MDI>
+      <MDI key="STATISTICS_MINIMUM">14046</MDI>
+      <MDI key="STATISTICS_STDDEV">118.69846843051</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">39.25</MDI>
+    </Metadata>
+    <NoDataValue>0</NoDataValue>
+    <Scale>0.02</Scale>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/mavc/Documents/Geomatics/thesis/Data QGIS project/Bigger extent 2022 and 2023/Start/ECO2LSTE.001_SDS_LST_doy2021110083425_aid0001.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1668" RasterYSize="1196" DataType="UInt16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1668" ySize="1196" />
+      <DstRect xOff="0.138864039612389" yOff="0.550530103686968" xSize="1669.65132968599" ySize="1197.18404694511" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="3">
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MAXIMUM">14954</MDI>
+      <MDI key="STATISTICS_MEAN">14577.79</MDI>
+      <MDI key="STATISTICS_MINIMUM">14244</MDI>
+      <MDI key="STATISTICS_STDDEV">93.317676054581</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">39.23</MDI>
+    </Metadata>
+    <NoDataValue>0</NoDataValue>
+    <Scale>0.02</Scale>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/mavc/Documents/Geomatics/thesis/Data QGIS project/Bigger extent 2022 and 2023/Start/ECO2LSTE.001_SDS_LST_doy2021150175516_aid0001.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1669" RasterYSize="1197" DataType="UInt16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1669" ySize="1197" />
+      <DstRect xOff="0.451248582382527" yOff="0" xSize="1669.24378877567" ySize="1197.17484431665" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="4">
+    <NoDataValue>0</NoDataValue>
+    <Scale>0.02</Scale>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/mavc/Documents/Geomatics/thesis/Data QGIS project/Bigger extent 2022 and 2023/Start/ECO2LSTE.001_SDS_LST_doy2022168092311_aid0001 (1).tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1668" RasterYSize="1196" DataType="UInt16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1667.83548707294" ySize="1196" />
+      <DstRect xOff="0.40610362437244" yOff="0.557832791465568" xSize="1669.59389637563" ySize="1197.260950221" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="5">
+    <NoDataValue>0</NoDataValue>
+    <Scale>0.02</Scale>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/mavc/Documents/Geomatics/thesis/Data QGIS project/Bigger extent 2022 and 2023/Start/ECO2LSTE.001_SDS_LST_doy2022183034731_aid0001 (1).tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1668" RasterYSize="1196" DataType="UInt16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1668" ySize="1196" />
+      <DstRect xOff="0" yOff="0.795660011976942" xSize="1669.50875507301" ySize="1197.08181718664" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="6">
+    <NoDataValue>0</NoDataValue>
+    <Scale>0.02</Scale>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/mavc/Documents/Geomatics/thesis/Data QGIS project/Bigger extent 2022 and 2023/Start/ECO2LSTE.001_SDS_LST_doy2022213171819_aid0001 (1).tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1673" RasterYSize="1199" DataType="UInt16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1672.63956059015" ySize="1199" />
+      <DstRect xOff="0.597139585872101" yOff="0.84613662454666" xSize="1669.40286041413" ySize="1196.67983276105" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="7">
+    <NoDataValue>0</NoDataValue>
+    <Scale>0.02</Scale>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/mavc/Documents/Geomatics/thesis/Data QGIS project/Bigger extent 2022 and 2023/Start/ECO2LSTE.001_SDS_LST_doy2022225122549_aid0001 (1).tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1673" RasterYSize="1199" DataType="UInt16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1673" ySize="1199" />
+      <DstRect xOff="0.394260228269598" yOff="0.769209341622669" xSize="1669.54930169499" ySize="1196.52696517172" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>
